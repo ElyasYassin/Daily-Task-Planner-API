@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
+require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 
 //mongoose.connect(process.env.DB, { useNewUrlParser: true });
+console.log(process.env.DB)
 try {
     mongoose.connect( process.env.DB, {useNewUrlParser: true, useUnifiedTopology: true}, () =>
         console.log("connected"));
@@ -19,7 +21,6 @@ var UserSchema = new Schema({
     username: { type: String, required: true, index: { unique: true }},
     password: { type: String, required: true, select: false }
 });
-
 UserSchema.pre('save', function(next) {
     var user = this;
 

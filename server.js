@@ -48,7 +48,7 @@ router.post('/signup', function(req, res) {
         user.name = req.body.name;
         user.username = req.body.username;
         user.password = req.body.password;
-
+        
         user.save(function(err){
             if (err) {
                 if (err.code == 11000)
@@ -56,7 +56,6 @@ router.post('/signup', function(req, res) {
                 else
                     return res.json(err);
             }
-
             res.json({success: true, msg: 'Successfully created new user.'})
         });
     }
@@ -88,7 +87,7 @@ router.post('/signin', function (req, res) {
 router.route('/tasks')
     .get((req, res) => {
         //Displays all tasks
-        Task.find()
+        console.log("hello");
     })
     .post((req, res) => {
         //Creates tasks
