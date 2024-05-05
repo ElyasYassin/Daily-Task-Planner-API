@@ -8,7 +8,6 @@ try {
     console.log(error)
     console.log("could not connect");
 }
-const collectionName = 'tasks'
 
 // Task schema
 var TaskSchema = new Schema({
@@ -17,13 +16,12 @@ var TaskSchema = new Schema({
         required: true
     },
     userID: { 
-        type: Schema.Types.ObjectId,
-        ref: 'User', // Reference to the User model
+        type: String,
         required: true
     },
     "Description": {
         type: String,
-        required: true
+        required: false
     },
     "Duedate": {
         type: Date, //Potentially change to string

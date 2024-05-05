@@ -27,6 +27,7 @@
     "http": "0.0.1-security",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.11.18",
+    "openai": "^4.38.5",
     "passport": "^0.6.0",
     "passport-http": "^0.3.0",
     "passport-jwt": "^4.0.0"
